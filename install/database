@@ -1,0 +1,390 @@
+#
+# TABLE STRUCTURE FOR: q_category
+#
+
+DROP TABLE IF EXISTS `q_category`;
+
+CREATE TABLE `q_category` (
+  `cat_id` int(11) NOT NULL AUTO_INCREMENT,
+  `cat_name` varchar(100) NOT NULL,
+  PRIMARY KEY (`cat_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
+
+INSERT INTO `q_category` (`cat_id`, `cat_name`) VALUES ('1', 'ENVIRONMENTAL ISSUES');
+INSERT INTO `q_category` (`cat_id`, `cat_name`) VALUES ('2', 'CURRENT EVENTS');
+INSERT INTO `q_category` (`cat_id`, `cat_name`) VALUES ('3', 'LOGICAL ANALYSIS');
+INSERT INTO `q_category` (`cat_id`, `cat_name`) VALUES ('4', 'IDIOMATIC EXPRESSIONS');
+INSERT INTO `q_category` (`cat_id`, `cat_name`) VALUES ('5', 'VOCABULARY');
+INSERT INTO `q_category` (`cat_id`, `cat_name`) VALUES ('6', 'SINGLE WORD APPROACH');
+INSERT INTO `q_category` (`cat_id`, `cat_name`) VALUES ('7', 'DOUBLE WORD APPROACH');
+INSERT INTO `q_category` (`cat_id`, `cat_name`) VALUES ('8', 'SENTENCE COMPLETION');
+INSERT INTO `q_category` (`cat_id`, `cat_name`) VALUES ('9', 'NUMBER SERIES');
+INSERT INTO `q_category` (`cat_id`, `cat_name`) VALUES ('10', 'PROBLEM SOLVING');
+INSERT INTO `q_category` (`cat_id`, `cat_name`) VALUES ('11', 'DATA SUFFICIENCY');
+INSERT INTO `q_category` (`cat_id`, `cat_name`) VALUES ('12', 'PHIL. CONSTITUITION');
+INSERT INTO `q_category` (`cat_id`, `cat_name`) VALUES ('13', 'WORD ANALOGY');
+INSERT INTO `q_category` (`cat_id`, `cat_name`) VALUES ('14', 'CULTURE SHOCK');
+INSERT INTO `q_category` (`cat_id`, `cat_name`) VALUES ('15', 'NUMBER ANALOGY');
+INSERT INTO `q_category` (`cat_id`, `cat_name`) VALUES ('16', 'IDENTIFYING ERROR');
+INSERT INTO `q_category` (`cat_id`, `cat_name`) VALUES ('17', 'GRAMMAR AND CORRECT USAGE');
+INSERT INTO `q_category` (`cat_id`, `cat_name`) VALUES ('20', 'FILL IN THE BLANK');
+
+
+#
+# TABLE STRUCTURE FOR: q_exam_setting
+#
+
+DROP TABLE IF EXISTS `q_exam_setting`;
+
+CREATE TABLE `q_exam_setting` (
+  `category_id` int(2) NOT NULL,
+  `exam_id` int(11) NOT NULL,
+  `exam_total` int(11) NOT NULL,
+  `exam_type` int(1) NOT NULL,
+  `exam_timelimit` int(11) NOT NULL,
+  `directions` varchar(250) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO `q_exam_setting` (`category_id`, `exam_id`, `exam_total`, `exam_type`, `exam_timelimit`, `directions`) VALUES ('5', '1', '10', '1', '0', 'Choose from among the suggested answers the word that means most nearly the same as the word in capital letters.');
+INSERT INTO `q_exam_setting` (`category_id`, `exam_id`, `exam_total`, `exam_type`, `exam_timelimit`, `directions`) VALUES ('20', '1', '5', '1', '0', '');
+
+
+#
+# TABLE STRUCTURE FOR: q_post_view
+#
+
+DROP TABLE IF EXISTS `q_post_view`;
+
+CREATE TABLE `q_post_view` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `page` text NOT NULL,
+  `post_id` int(11) NOT NULL,
+  `userip` text NOT NULL,
+  `year` int(11) NOT NULL,
+  `agent` varchar(255) NOT NULL,
+  `machine` varchar(50) NOT NULL,
+  `browser` varchar(25) NOT NULL,
+  `last_used_browser` varchar(15) NOT NULL,
+  `counter` int(11) NOT NULL,
+  `month` int(11) NOT NULL,
+  `day` int(11) NOT NULL,
+  `tday` varchar(11) NOT NULL,
+  `timeUpdate` int(11) NOT NULL,
+  `complete_date` date NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+
+INSERT INTO `q_post_view` (`id`, `page`, `post_id`, `userip`, `year`, `agent`, `machine`, `browser`, `last_used_browser`, `counter`, `month`, `day`, `tday`, `timeUpdate`, `complete_date`) VALUES ('1', 'quiz', '0', '127.0.0.1', '2018', '', 'Windows 7', 'Chrome', 'Chrome', '2', '3', '18', 'Sun', '1521442935', '2018-03-18');
+INSERT INTO `q_post_view` (`id`, `page`, `post_id`, `userip`, `year`, `agent`, `machine`, `browser`, `last_used_browser`, `counter`, `month`, `day`, `tday`, `timeUpdate`, `complete_date`) VALUES ('2', 'login', '0', '127.0.0.1', '2018', '', 'Windows 7', 'Chrome', 'Chrome', '17', '3', '18', 'Sun', '1523505008', '2018-03-18');
+INSERT INTO `q_post_view` (`id`, `page`, `post_id`, `userip`, `year`, `agent`, `machine`, `browser`, `last_used_browser`, `counter`, `month`, `day`, `tday`, `timeUpdate`, `complete_date`) VALUES ('3', 'index', '0', '127.0.0.1', '2018', '', 'Windows 7', 'Chrome', 'Chrome', '2', '3', '18', 'Sun', '1521848848', '2018-03-18');
+INSERT INTO `q_post_view` (`id`, `page`, `post_id`, `userip`, `year`, `agent`, `machine`, `browser`, `last_used_browser`, `counter`, `month`, `day`, `tday`, `timeUpdate`, `complete_date`) VALUES ('4', '/index.php', '0', '127.0.0.1', '2018', '', 'Windows 7', 'Chrome', 'Chrome', '16', '3', '19', 'Mon', '1523505006', '2018-03-19');
+INSERT INTO `q_post_view` (`id`, `page`, `post_id`, `userip`, `year`, `agent`, `machine`, `browser`, `last_used_browser`, `counter`, `month`, `day`, `tday`, `timeUpdate`, `complete_date`) VALUES ('5', '/index.php/', '0', '127.0.0.1', '2018', '', 'Windows 7', 'Chrome', '', '1', '3', '29', 'Thu', '1522336994', '2018-03-29');
+INSERT INTO `q_post_view` (`id`, `page`, `post_id`, `userip`, `year`, `agent`, `machine`, `browser`, `last_used_browser`, `counter`, `month`, `day`, `tday`, `timeUpdate`, `complete_date`) VALUES ('6', 'exam', '0', '127.0.0.1', '2018', '', 'Windows 7', 'Chrome', 'Chrome', '5', '4', '7', 'Sat', '1523459891', '2018-04-07');
+INSERT INTO `q_post_view` (`id`, `page`, `post_id`, `userip`, `year`, `agent`, `machine`, `browser`, `last_used_browser`, `counter`, `month`, `day`, `tday`, `timeUpdate`, `complete_date`) VALUES ('7', 'exam/rating', '0', '127.0.0.1', '2018', '', 'Windows 7', 'Chrome', '', '1', '4', '7', 'Sat', '1523066833', '2018-04-07');
+INSERT INTO `q_post_view` (`id`, `page`, `post_id`, `userip`, `year`, `agent`, `machine`, `browser`, `last_used_browser`, `counter`, `month`, `day`, `tday`, `timeUpdate`, `complete_date`) VALUES ('8', 'exam/search', '0', '127.0.0.1', '2018', '', 'Windows 7', 'Chrome', '', '1', '4', '7', 'Sat', '1523067499', '2018-04-07');
+INSERT INTO `q_post_view` (`id`, `page`, `post_id`, `userip`, `year`, `agent`, `machine`, `browser`, `last_used_browser`, `counter`, `month`, `day`, `tday`, `timeUpdate`, `complete_date`) VALUES ('9', 'exam/take_exam/18', '0', '127.0.0.1', '2018', '', 'Windows 7', 'Chrome', '', '1', '4', '7', 'Sat', '1523091763', '2018-04-07');
+INSERT INTO `q_post_view` (`id`, `page`, `post_id`, `userip`, `year`, `agent`, `machine`, `browser`, `last_used_browser`, `counter`, `month`, `day`, `tday`, `timeUpdate`, `complete_date`) VALUES ('10', 'exam/take_exam/19', '0', '127.0.0.1', '2018', '', 'Windows 7', 'Chrome', '', '1', '4', '8', 'Sun', '1523167846', '2018-04-08');
+INSERT INTO `q_post_view` (`id`, `page`, `post_id`, `userip`, `year`, `agent`, `machine`, `browser`, `last_used_browser`, `counter`, `month`, `day`, `tday`, `timeUpdate`, `complete_date`) VALUES ('11', 'exam/take_exam/20', '0', '127.0.0.1', '2018', '', 'Windows 7', 'Chrome', '', '1', '4', '8', 'Sun', '1523169332', '2018-04-08');
+INSERT INTO `q_post_view` (`id`, `page`, `post_id`, `userip`, `year`, `agent`, `machine`, `browser`, `last_used_browser`, `counter`, `month`, `day`, `tday`, `timeUpdate`, `complete_date`) VALUES ('12', 'exam/info/civil-service-exam-2012', '0', '127.0.0.1', '2018', '', 'Windows 7', 'Chrome', '', '1', '4', '8', 'Sun', '1523186058', '2018-04-08');
+INSERT INTO `q_post_view` (`id`, `page`, `post_id`, `userip`, `year`, `agent`, `machine`, `browser`, `last_used_browser`, `counter`, `month`, `day`, `tday`, `timeUpdate`, `complete_date`) VALUES ('13', 'exam/info/civil-service-exam-2018', '0', '127.0.0.1', '2018', '', 'Windows 7', 'Chrome', 'Chrome', '3', '4', '8', 'Sun', '1523454628', '2018-04-08');
+INSERT INTO `q_post_view` (`id`, `page`, `post_id`, `userip`, `year`, `agent`, `machine`, `browser`, `last_used_browser`, `counter`, `month`, `day`, `tday`, `timeUpdate`, `complete_date`) VALUES ('14', 'exam/take_exam/1', '0', '127.0.0.1', '2018', '', 'Windows 7', 'Chrome', 'Chrome', '3', '4', '9', 'Mon', '1523459895', '2018-04-09');
+
+
+#
+# TABLE STRUCTURE FOR: q_post_visit
+#
+
+DROP TABLE IF EXISTS `q_post_visit`;
+
+CREATE TABLE `q_post_visit` (
+  `visit_id` int(11) NOT NULL AUTO_INCREMENT,
+  `page_id` int(11) NOT NULL,
+  `page` varchar(500) NOT NULL,
+  `country` varchar(50) NOT NULL,
+  `count` int(11) NOT NULL,
+  `date_visited` varchar(20) NOT NULL,
+  `date_updated` varchar(20) NOT NULL,
+  `month_year` varchar(20) NOT NULL,
+  PRIMARY KEY (`visit_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+#
+# TABLE STRUCTURE FOR: q_quiz
+#
+
+DROP TABLE IF EXISTS `q_quiz`;
+
+CREATE TABLE `q_quiz` (
+  `quiz_id` int(11) NOT NULL AUTO_INCREMENT,
+  `post_question` text NOT NULL,
+  `choice_id` int(11) NOT NULL,
+  `post_answer` varchar(150) NOT NULL,
+  `post_choice1` varchar(150) NOT NULL,
+  `post_choice2` varchar(150) NOT NULL,
+  `post_choice3` varchar(150) NOT NULL,
+  `post_choice4` varchar(150) NOT NULL,
+  `date_posted` varchar(20) NOT NULL,
+  `status` int(1) NOT NULL,
+  `token` varchar(20) NOT NULL,
+  PRIMARY KEY (`quiz_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+INSERT INTO `q_quiz` (`quiz_id`, `post_question`, `choice_id`, `post_answer`, `post_choice1`, `post_choice2`, `post_choice3`, `post_choice4`, `date_posted`, `status`, `token`) VALUES ('1', '<p>gwagwgwaw</p>', '1', 'waegawe', 'gwegawg', 'wegwa', 'wegaweg', 'wegawegga', '2018-04-10 08:54:46', '0', '0');
+INSERT INTO `q_quiz` (`quiz_id`, `post_question`, `choice_id`, `post_answer`, `post_choice1`, `post_choice2`, `post_choice3`, `post_choice4`, `date_posted`, `status`, `token`) VALUES ('2', 'ergergsergse', '6', 'gsegsegser', 'gsegrsergse', 'gsergseg', 'sergserg', 'sergesrgserg', '2018-04-10 09:02:59', '0', '5');
+INSERT INTO `q_quiz` (`quiz_id`, `post_question`, `choice_id`, `post_answer`, `post_choice1`, `post_choice2`, `post_choice3`, `post_choice4`, `date_posted`, `status`, `token`) VALUES ('3', 'egsergserg ergtser', '11', 'segsegr', 'gsergsegr', 'gsegse', 'grsegser', 'gsergser', '2018-04-10 09:07:37', '0', '5acc0e5980c09');
+
+
+#
+# TABLE STRUCTURE FOR: q_quiz_choices
+#
+
+DROP TABLE IF EXISTS `q_quiz_choices`;
+
+CREATE TABLE `q_quiz_choices` (
+  `choice_id` int(11) NOT NULL AUTO_INCREMENT,
+  `quiz_id` int(11) NOT NULL,
+  `choice_label` varchar(150) NOT NULL,
+  `is_answer` int(1) NOT NULL,
+  `status` int(1) NOT NULL,
+  PRIMARY KEY (`choice_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
+
+INSERT INTO `q_quiz_choices` (`choice_id`, `quiz_id`, `choice_label`, `is_answer`, `status`) VALUES ('1', '1', 'waegawe', '1', '0');
+INSERT INTO `q_quiz_choices` (`choice_id`, `quiz_id`, `choice_label`, `is_answer`, `status`) VALUES ('2', '1', 'gwegawg', '0', '0');
+INSERT INTO `q_quiz_choices` (`choice_id`, `quiz_id`, `choice_label`, `is_answer`, `status`) VALUES ('3', '1', 'wegwa', '0', '0');
+INSERT INTO `q_quiz_choices` (`choice_id`, `quiz_id`, `choice_label`, `is_answer`, `status`) VALUES ('4', '1', 'wegaweg', '0', '0');
+INSERT INTO `q_quiz_choices` (`choice_id`, `quiz_id`, `choice_label`, `is_answer`, `status`) VALUES ('5', '1', 'wegawegga', '0', '0');
+INSERT INTO `q_quiz_choices` (`choice_id`, `quiz_id`, `choice_label`, `is_answer`, `status`) VALUES ('6', '2', 'gsegsegser', '1', '0');
+INSERT INTO `q_quiz_choices` (`choice_id`, `quiz_id`, `choice_label`, `is_answer`, `status`) VALUES ('7', '2', 'gsegrsergse', '0', '0');
+INSERT INTO `q_quiz_choices` (`choice_id`, `quiz_id`, `choice_label`, `is_answer`, `status`) VALUES ('8', '2', 'gsergseg', '0', '0');
+INSERT INTO `q_quiz_choices` (`choice_id`, `quiz_id`, `choice_label`, `is_answer`, `status`) VALUES ('9', '2', 'sergserg', '0', '0');
+INSERT INTO `q_quiz_choices` (`choice_id`, `quiz_id`, `choice_label`, `is_answer`, `status`) VALUES ('10', '2', 'sergesrgserg', '0', '0');
+INSERT INTO `q_quiz_choices` (`choice_id`, `quiz_id`, `choice_label`, `is_answer`, `status`) VALUES ('11', '3', 'segsegr', '1', '0');
+INSERT INTO `q_quiz_choices` (`choice_id`, `quiz_id`, `choice_label`, `is_answer`, `status`) VALUES ('12', '3', 'gsergsegr', '0', '0');
+INSERT INTO `q_quiz_choices` (`choice_id`, `quiz_id`, `choice_label`, `is_answer`, `status`) VALUES ('13', '3', 'gsegse', '0', '0');
+INSERT INTO `q_quiz_choices` (`choice_id`, `quiz_id`, `choice_label`, `is_answer`, `status`) VALUES ('14', '3', 'grsegser', '0', '0');
+INSERT INTO `q_quiz_choices` (`choice_id`, `quiz_id`, `choice_label`, `is_answer`, `status`) VALUES ('15', '3', 'gsergser', '0', '0');
+
+
+#
+# TABLE STRUCTURE FOR: q_quizes
+#
+
+DROP TABLE IF EXISTS `q_quizes`;
+
+CREATE TABLE `q_quizes` (
+  `quiz_id` int(11) NOT NULL,
+  `exam_id` int(11) NOT NULL,
+  `category_id` int(2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO `q_quizes` (`quiz_id`, `exam_id`, `category_id`) VALUES ('1', '1', '5');
+INSERT INTO `q_quizes` (`quiz_id`, `exam_id`, `category_id`) VALUES ('2', '1', '5');
+INSERT INTO `q_quizes` (`quiz_id`, `exam_id`, `category_id`) VALUES ('3', '1', '5');
+
+
+#
+# TABLE STRUCTURE FOR: q_quizes_setting
+#
+
+DROP TABLE IF EXISTS `q_quizes_setting`;
+
+CREATE TABLE `q_quizes_setting` (
+  `quizes_id` int(11) NOT NULL AUTO_INCREMENT,
+  `quizes_title` varchar(150) NOT NULL,
+  `e_description` varchar(250) NOT NULL,
+  `shuffle_choices` int(1) NOT NULL,
+  `slug` varchar(250) NOT NULL,
+  `suffle_questions` int(1) NOT NULL,
+  `time_limit` int(11) NOT NULL,
+  `status` int(1) NOT NULL,
+  `date_posted` varchar(20) NOT NULL,
+  PRIMARY KEY (`quizes_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+INSERT INTO `q_quizes_setting` (`quizes_id`, `quizes_title`, `e_description`, `shuffle_choices`, `slug`, `suffle_questions`, `time_limit`, `status`, `date_posted`) VALUES ('1', 'Civil service exam 2018', 'Test begin here. Good luck!', '1', 'civil-service-exam-2018', '1', '0', '0', '2018-04-08 22:25:56');
+
+
+#
+# TABLE STRUCTURE FOR: q_site
+#
+
+DROP TABLE IF EXISTS `q_site`;
+
+CREATE TABLE `q_site` (
+  `site_id` int(11) NOT NULL AUTO_INCREMENT,
+  `site_name` varchar(150) NOT NULL,
+  `site_path` varchar(50) NOT NULL,
+  `date_created` date NOT NULL,
+  `site_category` int(2) NOT NULL,
+  `status` int(1) NOT NULL,
+  PRIMARY KEY (`site_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+INSERT INTO `q_site` (`site_id`, `site_name`, `site_path`, `date_created`, `site_category`, `status`) VALUES ('1', 'Coloftech State of the Arts and Technology', 'home', '2018-02-16', '0', '1');
+
+
+#
+# TABLE STRUCTURE FOR: q_site_category
+#
+
+DROP TABLE IF EXISTS `q_site_category`;
+
+CREATE TABLE `q_site_category` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+INSERT INTO `q_site_category` (`id`, `name`) VALUES ('1', 'College');
+INSERT INTO `q_site_category` (`id`, `name`) VALUES ('2', 'Office');
+
+
+#
+# TABLE STRUCTURE FOR: q_site_setting
+#
+
+DROP TABLE IF EXISTS `q_site_setting`;
+
+CREATE TABLE `q_site_setting` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `setting_name` varchar(100) NOT NULL,
+  `setting_value` text NOT NULL,
+  `site_id` int(11) NOT NULL,
+  `parent_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+#
+# TABLE STRUCTURE FOR: q_site_theme
+#
+
+DROP TABLE IF EXISTS `q_site_theme`;
+
+CREATE TABLE `q_site_theme` (
+  `site_id` int(11) NOT NULL,
+  `template_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+#
+# TABLE STRUCTURE FOR: q_site_users
+#
+
+DROP TABLE IF EXISTS `q_site_users`;
+
+CREATE TABLE `q_site_users` (
+  `site_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `status` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+#
+# TABLE STRUCTURE FOR: q_summernote
+#
+
+DROP TABLE IF EXISTS `q_summernote`;
+
+CREATE TABLE `q_summernote` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `post_id` int(11) NOT NULL,
+  `gallery_id` int(11) NOT NULL,
+  `newfilename` varchar(255) NOT NULL,
+  `title` varchar(50) NOT NULL,
+  `mtype` varchar(255) NOT NULL,
+  `type` varchar(25) NOT NULL,
+  `status` int(1) NOT NULL,
+  `link` varchar(255) NOT NULL,
+  `caption` varchar(200) NOT NULL,
+  `u_key` varchar(20) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+#
+# TABLE STRUCTURE FOR: q_template
+#
+
+DROP TABLE IF EXISTS `q_template`;
+
+CREATE TABLE `q_template` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL,
+  `status` int(1) NOT NULL,
+  `date_added` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+INSERT INTO `q_template` (`id`, `name`, `status`, `date_added`) VALUES ('1', 'default', '1', '0000-00-00 00:00:00');
+INSERT INTO `q_template` (`id`, `name`, `status`, `date_added`) VALUES ('2', 'admin', '0', '0000-00-00 00:00:00');
+INSERT INTO `q_template` (`id`, `name`, `status`, `date_added`) VALUES ('3', 'blank', '0', '0000-00-00 00:00:00');
+
+
+#
+# TABLE STRUCTURE FOR: q_user_exam
+#
+
+DROP TABLE IF EXISTS `q_user_exam`;
+
+CREATE TABLE `q_user_exam` (
+  `user_exam_id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `exam_id` int(11) NOT NULL,
+  `category_id` int(1) NOT NULL,
+  `date_taken` varchar(20) NOT NULL,
+  `result` int(11) NOT NULL,
+  PRIMARY KEY (`user_exam_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+#
+# TABLE STRUCTURE FOR: q_user_exam_answer
+#
+
+DROP TABLE IF EXISTS `q_user_exam_answer`;
+
+CREATE TABLE `q_user_exam_answer` (
+  `category_id` int(11) NOT NULL,
+  `user_exam_id` int(11) NOT NULL,
+  `quiz_id` int(11) NOT NULL,
+  `answer_id` int(11) NOT NULL,
+  `answer_label` varchar(150) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+#
+# TABLE STRUCTURE FOR: q_user_settings
+#
+
+DROP TABLE IF EXISTS `q_user_settings`;
+
+CREATE TABLE `q_user_settings` (
+  `user_id` int(11) NOT NULL,
+  `title` varchar(250) NOT NULL,
+  `value` varchar(250) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO `q_user_settings` (`user_id`, `title`, `value`) VALUES ('1', 'profile-img', 'http://civil-quiz/public/images/pretty-nice-luffy-cosplay-from-one-piece3.jpg');
+INSERT INTO `q_user_settings` (`user_id`, `title`, `value`) VALUES ('1', 'id', 'voter');
+
+
+#
+# TABLE STRUCTURE FOR: q_users
+#
+
+DROP TABLE IF EXISTS `q_users`;
+
+CREATE TABLE `q_users` (
+  `user_id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_name` varchar(50) NOT NULL,
+  `user_pass` varchar(250) NOT NULL,
+  `first_name` varchar(50) NOT NULL,
+  `middle_name` varchar(50) NOT NULL,
+  `last_name` varchar(50) NOT NULL,
+  `user_email` varchar(100) NOT NULL,
+  `last_logged_in` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `status` int(11) NOT NULL,
+  PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+INSERT INTO `q_users` (`user_id`, `user_name`, `user_pass`, `first_name`, `middle_name`, `last_name`, `user_email`, `last_logged_in`, `status`) VALUES ('1', 'admin', '68be23e1141e8508efd5ecbf79f62168', 'Harold', '', 'Rita', '', '2018-02-24 02:58:34', '0');
+INSERT INTO `q_users` (`user_id`, `user_name`, `user_pass`, `first_name`, `middle_name`, `last_name`, `user_email`, `last_logged_in`, `status`) VALUES ('2', 'coed', 'd41ddfe88c1030bb35c7d59a3a907feb', '', '', '', '', '2018-02-24 01:45:33', '0');
+INSERT INTO `q_users` (`user_id`, `user_name`, `user_pass`, `first_name`, `middle_name`, `last_name`, `user_email`, `last_logged_in`, `status`) VALUES ('3', 'bilar', 'e2ee372135ea5b88a709c227635b7fd2', '', '', '', '', '2018-02-24 01:46:46', '0');
+
+

@@ -1,0 +1,213 @@
+.main-container {
+  padding: 10px 15px;
+}
+
+.skywhite {
+	background-image: url(../public/images/blue-w.png);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+
+}
+.skywhite-robo {
+	background-color: #078ef7;
+	background-image: url(../public/images/blue-robo.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+
+}
+.skylime{
+	background-color: rgba(251,224,40,.50);
+	background-image: url(../public/images/logo-line-sss.png);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+
+}
+
+.skyblue-vw {
+	background-image: url(../public/images/blue-robot-vw.png);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+
+}
+.skyblue-vh {
+	background-image: url(../public/images/blue-robot-vh.png);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+
+}
+.skyblue-vg {
+	background-color: #22c8ff;
+	background-image: url(../public/images/blue-robot-vg.png);
+	background-size: cover;
+	background-position:  center center;
+	background-repeat: no-repeat;
+
+}
+.skyblue-v2 {
+	background-color: #22c8ff;
+	background-image: url(../public/images/blue-robot-v3.png);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+
+}
+.skyblue {
+	background-color: #22c8ff;
+	background-image: url(../public/images/blue-robot-v2.png);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+
+}
+.deepskyblue {
+	background-color: #00bfff;
+	background-image: url(../public/images/logo-line.png);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+
+}
+.darkerskyblue {
+	background-color: #00a6dd;
+	background-image: url(../public/images/logo-line.png);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+
+}
+.carousel-indicators {
+	bottom: 0;
+}
+.carousel-control.left{
+	left: -50px;
+}
+.carousel-control.right{
+	right: -50px;
+}
+.carousel-control.right,
+.carousel-control.left {
+	background-image: none;
+	display: none;
+
+}
+#carousel:hover .carousel-control{
+	display: inline-block;
+}
+.carousel .item {
+	min-height: 375px; 
+	height: 100%;
+	width:100%; 
+}
+.carousel-caption h3,
+.carousel .icon-container,
+.carousel-caption button {
+	background-color: rgba(250,250,250,.5);
+}
+.carousel-caption h3 {
+	padding: .5em;
+	border-radius: 5px;
+}
+.carousel-caption h3:hover{
+	background-color: rgba(0,0,0,.9);
+}
+.carousel .icon-container{
+	background-color: rgba(254,254,254,.8);
+
+}
+.carousel .icon-container > img{
+	width: 100%;
+	max-width: 100px;
+}
+.carousel .icon-container {
+	display: inline-block;
+	font-size: 25px;
+	line-height: 25px;
+	padding: 1em;
+	text-align: center;
+	border-radius: 50%;
+}
+.carousel-caption button {
+	border-color: #00bfff;
+	margin-top: 1em; 
+}
+
+/* Animation delays */
+.carousel-caption h3:first-child {
+	-webkit-animation-delay: 1s;
+	        animation-delay: 1s;
+}
+.carousel-caption h3:nth-child(2) {
+	-webkit-animation-delay: 2s;
+	        animation-delay: 2s;
+}
+.carousel-caption button {
+	-webkit-animation-delay: 3s;
+	        animation-delay: 3s;
+}
+
+h1 {
+  text-align: center;  
+  margin-bottom: 30px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.p {
+  padding-top: 125px;
+  text-align: center;
+}
+
+.p a {
+  text-decoration: underline;
+}
+
+@media only screen and (max-width: 968px) {
+
+.carousel-control.left{
+	left: -15px;
+}
+.carousel-control.right{
+	right: -15px;
+}
+}
+@media only screen and (max-width: 768px) {
+
+.skyblue-vw,
+.skyblue-vh {
+	background-color: #22c8ff;
+	background-image: url(../public/images/mobile.png);
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+
+}
+.carousel .icon-container > img{
+	width: 100%;
+	max-width: 50px;
+}
+.carousel .icon-container{
+	max-width: 120px;
+}
+.carousel-caption h3 {
+	font-size: 14px;
+}
+
+.carousel-caption {
+	margin-bottom: 100px;
+	padding: 0;
+}
+
+.carousel-control.right,
+.carousel-control.left {
+	top:-100px;
+	
+}
+.carousel-control.left{
+	left: 0;
+}
+.carousel-control.right{
+	right: 0;
+}
+}
